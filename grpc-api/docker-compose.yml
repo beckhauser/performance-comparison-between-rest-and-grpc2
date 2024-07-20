@@ -1,0 +1,15 @@
+version: '2.4'
+
+services:
+  app:
+    build: .
+    image: grpc-app
+    ports:
+      - '50051:50051'
+      - '8000:8000'
+    environment:
+      - NAME=grpc-docker
+    volumes:
+      - .:/app
+    cpus: 1.0
+    mem_limit: 1G
